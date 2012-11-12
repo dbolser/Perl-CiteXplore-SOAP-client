@@ -1,0 +1,210 @@
+package MyTypes::bookOrReportDetails;
+use strict;
+use warnings;
+
+
+__PACKAGE__->_set_element_form_qualified(0);
+
+sub get_xmlns { 'http://webservice.cdb.ebi.ac.uk/' };
+
+our $XML_ATTRIBUTE_CLASS;
+undef $XML_ATTRIBUTE_CLASS;
+
+sub __get_attr_class {
+    return $XML_ATTRIBUTE_CLASS;
+}
+
+use Class::Std::Fast::Storable constructor => 'none';
+use base qw(SOAP::WSDL::XSD::Typelib::ComplexType);
+
+Class::Std::initialize();
+
+{ # BLOCK to scope variables
+
+my %publisher_of :ATTR(:get<publisher>);
+my %dayOfPublication_of :ATTR(:get<dayOfPublication>);
+my %monthOfPublication_of :ATTR(:get<monthOfPublication>);
+my %yearOfPublication_of :ATTR(:get<yearOfPublication>);
+my %numberOfPages_of :ATTR(:get<numberOfPages>);
+my %edition_of :ATTR(:get<edition>);
+my %isbn10_of :ATTR(:get<isbn10>);
+my %isbn13_of :ATTR(:get<isbn13>);
+my %seriesName_of :ATTR(:get<seriesName>);
+my %seriesIssn_of :ATTR(:get<seriesIssn>);
+my %comprisingTitle_of :ATTR(:get<comprisingTitle>);
+my %comprisingTitleNonAscii_of :ATTR(:get<comprisingTitleNonAscii>);
+my %extraInformation_of :ATTR(:get<extraInformation>);
+
+__PACKAGE__->_factory(
+    [ qw(        publisher
+        dayOfPublication
+        monthOfPublication
+        yearOfPublication
+        numberOfPages
+        edition
+        isbn10
+        isbn13
+        seriesName
+        seriesIssn
+        comprisingTitle
+        comprisingTitleNonAscii
+        extraInformation
+
+    ) ],
+    {
+        'publisher' => \%publisher_of,
+        'dayOfPublication' => \%dayOfPublication_of,
+        'monthOfPublication' => \%monthOfPublication_of,
+        'yearOfPublication' => \%yearOfPublication_of,
+        'numberOfPages' => \%numberOfPages_of,
+        'edition' => \%edition_of,
+        'isbn10' => \%isbn10_of,
+        'isbn13' => \%isbn13_of,
+        'seriesName' => \%seriesName_of,
+        'seriesIssn' => \%seriesIssn_of,
+        'comprisingTitle' => \%comprisingTitle_of,
+        'comprisingTitleNonAscii' => \%comprisingTitleNonAscii_of,
+        'extraInformation' => \%extraInformation_of,
+    },
+    {
+        'publisher' => 'SOAP::WSDL::XSD::Typelib::Builtin::string',
+        'dayOfPublication' => 'SOAP::WSDL::XSD::Typelib::Builtin::byte',
+        'monthOfPublication' => 'SOAP::WSDL::XSD::Typelib::Builtin::byte',
+        'yearOfPublication' => 'SOAP::WSDL::XSD::Typelib::Builtin::short',
+        'numberOfPages' => 'SOAP::WSDL::XSD::Typelib::Builtin::string',
+        'edition' => 'SOAP::WSDL::XSD::Typelib::Builtin::string',
+        'isbn10' => 'SOAP::WSDL::XSD::Typelib::Builtin::string',
+        'isbn13' => 'SOAP::WSDL::XSD::Typelib::Builtin::string',
+        'seriesName' => 'SOAP::WSDL::XSD::Typelib::Builtin::string',
+        'seriesIssn' => 'SOAP::WSDL::XSD::Typelib::Builtin::string',
+        'comprisingTitle' => 'SOAP::WSDL::XSD::Typelib::Builtin::string',
+        'comprisingTitleNonAscii' => 'SOAP::WSDL::XSD::Typelib::Builtin::string',
+        'extraInformation' => 'SOAP::WSDL::XSD::Typelib::Builtin::string',
+    },
+    {
+
+        'publisher' => 'publisher',
+        'dayOfPublication' => 'dayOfPublication',
+        'monthOfPublication' => 'monthOfPublication',
+        'yearOfPublication' => 'yearOfPublication',
+        'numberOfPages' => 'numberOfPages',
+        'edition' => 'edition',
+        'isbn10' => 'isbn10',
+        'isbn13' => 'isbn13',
+        'seriesName' => 'seriesName',
+        'seriesIssn' => 'seriesIssn',
+        'comprisingTitle' => 'comprisingTitle',
+        'comprisingTitleNonAscii' => 'comprisingTitleNonAscii',
+        'extraInformation' => 'extraInformation',
+    }
+);
+
+} # end BLOCK
+
+
+
+
+
+
+
+1;
+
+
+=pod
+
+=head1 NAME
+
+MyTypes::bookOrReportDetails
+
+=head1 DESCRIPTION
+
+Perl data type class for the XML Schema defined complexType
+bookOrReportDetails from the namespace http://webservice.cdb.ebi.ac.uk/.
+
+
+
+
+
+
+=head2 PROPERTIES
+
+The following properties may be accessed using get_PROPERTY / set_PROPERTY
+methods:
+
+=over
+
+=item * publisher
+
+
+=item * dayOfPublication
+
+
+=item * monthOfPublication
+
+
+=item * yearOfPublication
+
+
+=item * numberOfPages
+
+
+=item * edition
+
+
+=item * isbn10
+
+
+=item * isbn13
+
+
+=item * seriesName
+
+
+=item * seriesIssn
+
+
+=item * comprisingTitle
+
+
+=item * comprisingTitleNonAscii
+
+
+=item * extraInformation
+
+
+
+
+=back
+
+
+=head1 METHODS
+
+=head2 new
+
+Constructor. The following data structure may be passed to new():
+
+ { # MyTypes::bookOrReportDetails
+   publisher =>  $some_value, # string
+   dayOfPublication =>  $some_value, # byte
+   monthOfPublication =>  $some_value, # byte
+   yearOfPublication =>  $some_value, # short
+   numberOfPages =>  $some_value, # string
+   edition =>  $some_value, # string
+   isbn10 =>  $some_value, # string
+   isbn13 =>  $some_value, # string
+   seriesName =>  $some_value, # string
+   seriesIssn =>  $some_value, # string
+   comprisingTitle =>  $some_value, # string
+   comprisingTitleNonAscii =>  $some_value, # string
+   extraInformation =>  $some_value, # string
+ },
+
+
+
+
+=head1 AUTHOR
+
+Generated by SOAP::WSDL
+
+=cut
+
