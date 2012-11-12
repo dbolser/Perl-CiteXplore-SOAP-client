@@ -1,1 +1,202 @@
-WSCitationImplPort.pm
+=pod
+
+=head1 NAME
+
+MyInterfaces::WSCitationImplService::WSCitationImplPort - SOAP Interface for the WSCitationImplService Web Service
+
+=head1 SYNOPSIS
+
+ use MyInterfaces::WSCitationImplService::WSCitationImplPort;
+ my $interface = MyInterfaces::WSCitationImplService::WSCitationImplPort->new();
+
+ my $response;
+ $response = $interface->searchPublications();
+ $response = $interface->profilePublications();
+ $response = $interface->getCitations();
+ $response = $interface->getReferences();
+ $response = $interface->getTextMinedTerms();
+ $response = $interface->getDatabaseLinks();
+ $response = $interface->getSupplementaryFiles();
+ $response = $interface->getFulltextXML();
+ $response = $interface->listSearchFields();
+
+
+
+=head1 DESCRIPTION
+
+SOAP Interface for the WSCitationImplService web service
+located at http://www.ebi.ac.uk:80/webservices/citexplore/v3.0.1/service.
+
+=head1 SERVICE WSCitationImplService
+
+
+
+=head2 Port WSCitationImplPort
+
+
+
+=head1 METHODS
+
+=head2 General methods
+
+=head3 new
+
+Constructor.
+
+All arguments are forwarded to L<SOAP::WSDL::Client|SOAP::WSDL::Client>.
+
+=head2 SOAP Service methods
+
+Method synopsis is displayed with hash refs as parameters.
+
+The commented class names in the method's parameters denote that objects
+of the corresponding class can be passed instead of the marked hash ref.
+
+You may pass any combination of objects, hash and list refs to these
+methods, as long as you meet the structure.
+
+List items (i.e. multiple occurences) are not displayed in the synopsis.
+You may generally pass a list ref of hash refs (or objects) instead of a hash
+ref - this may result in invalid XML if used improperly, though. Note that
+SOAP::WSDL always expects list references at maximum depth position.
+
+XML attributes are not displayed in this synopsis and cannot be set using
+hash refs. See the respective class' documentation for additional information.
+
+
+
+=head3 searchPublications
+
+
+
+Returns a L<MyElements::searchPublicationsResponse|MyElements::searchPublicationsResponse> object.
+
+ $response = $interface->searchPublications( { # MyTypes::searchPublications
+    queryString =>  $some_value, # string
+    dataSet =>  $some_value, # string
+    resultType =>  $some_value, # string
+    offSet =>  $some_value, # int
+    synonym =>  $some_value, # boolean
+    email =>  $some_value, # string
+  },,
+ );
+
+=head3 profilePublications
+
+
+
+Returns a L<MyElements::profilePublicationsResponse|MyElements::profilePublicationsResponse> object.
+
+ $response = $interface->profilePublications( { # MyTypes::profilePublications
+    queryString =>  $some_value, # string
+    dataSet =>  $some_value, # string
+    profileType =>  $some_value, # string
+    synonym =>  $some_value, # boolean
+    email =>  $some_value, # string
+  },,
+ );
+
+=head3 getCitations
+
+
+
+Returns a L<MyElements::getCitationsResponse|MyElements::getCitationsResponse> object.
+
+ $response = $interface->getCitations( { # MyTypes::getCitations
+    id =>  $some_value, # string
+    source =>  $some_value, # string
+    offSet =>  $some_value, # int
+    email =>  $some_value, # string
+  },,
+ );
+
+=head3 getReferences
+
+
+
+Returns a L<MyElements::getReferencesResponse|MyElements::getReferencesResponse> object.
+
+ $response = $interface->getReferences( { # MyTypes::getReferences
+    id =>  $some_value, # string
+    source =>  $some_value, # string
+    offSet =>  $some_value, # int
+    email =>  $some_value, # string
+  },,
+ );
+
+=head3 getTextMinedTerms
+
+
+
+Returns a L<MyElements::getTextMinedTermsResponse|MyElements::getTextMinedTermsResponse> object.
+
+ $response = $interface->getTextMinedTerms( { # MyTypes::getTextMinedTerms
+    id =>  $some_value, # string
+    source =>  $some_value, # string
+    semanticType =>  $some_value, # string
+    offSet =>  $some_value, # int
+    email =>  $some_value, # string
+  },,
+ );
+
+=head3 getDatabaseLinks
+
+
+
+Returns a L<MyElements::getDatabaseLinksResponse|MyElements::getDatabaseLinksResponse> object.
+
+ $response = $interface->getDatabaseLinks( { # MyTypes::getDatabaseLinks
+    id =>  $some_value, # string
+    source =>  $some_value, # string
+    database =>  $some_value, # string
+    offSet =>  $some_value, # int
+    email =>  $some_value, # string
+  },,
+ );
+
+=head3 getSupplementaryFiles
+
+
+
+Returns a L<MyElements::getSupplementaryFilesResponse|MyElements::getSupplementaryFilesResponse> object.
+
+ $response = $interface->getSupplementaryFiles( { # MyTypes::getSupplementaryFiles
+    id =>  $some_value, # string
+    source =>  $some_value, # string
+    email =>  $some_value, # string
+  },,
+ );
+
+=head3 getFulltextXML
+
+
+
+Returns a L<MyElements::getFulltextXMLResponse|MyElements::getFulltextXMLResponse> object.
+
+ $response = $interface->getFulltextXML( { # MyTypes::getFulltextXML
+    id =>  $some_value, # string
+    source =>  $some_value, # string
+    email =>  $some_value, # string
+  },,
+ );
+
+=head3 listSearchFields
+
+
+
+Returns a L<MyElements::listSearchFieldsResponse|MyElements::listSearchFieldsResponse> object.
+
+ $response = $interface->listSearchFields( { # MyTypes::listSearchFields
+    email =>  $some_value, # string
+  },,
+ );
+
+
+
+=head1 AUTHOR
+
+Generated by SOAP::WSDL on Mon Nov 12 20:51:43 2012
+
+
+=cut
+
