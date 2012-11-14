@@ -14,13 +14,13 @@ use MyInterfaces::WSCitationImplService::WSCitationImplPort;
 my $service =
   MyInterfaces::WSCitationImplService::WSCitationImplPort->new();
 
-# Default route
+## Default route
 get '/' => sub {
     my $self = shift;
     $self->render(text => "REST API!");
 };
 
-
+## Use something like this to handle different format requests
 get '/hello' => sub {
     my $self = shift;
     $self->respond_to(
@@ -57,15 +57,17 @@ any [qw(GET POST)] =>
         my $method = $self->param('method');
         my @params = $self->param;
         
+        ## With all given arguments (without validation or defaults)
         my %method_args;
         for(@params){
             next if $_ eq 'method';
             $method_args{$_} = $self->param($_);
         }
-
+        
         ## Debugging
         #$self->render(text => "Calling $method...\n". Dumper \%method_args);
-
+        #print Dumper \%method_args;
+        
         ## Call it!
         my $result = $service->$method( \%method_args );
         
