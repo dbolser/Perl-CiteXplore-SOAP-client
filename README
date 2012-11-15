@@ -1,2 +1,4 @@
 Documented here:
 http://bioblog5000.blogspot.fr/2012/11/a-perl-client-for-citexplore-soap.html
+
+Now includes a primative REST wrapper... Looking for a place to serve it from ... requires Perl >= 5.10.1 :-/
